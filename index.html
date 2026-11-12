@@ -310,6 +310,37 @@ footer p+p{margin-top:8px}
   .s2 .stamp{left:-10px!important;top:-40px!important;font-size:24px}.stamp{font-size:24px}
   .ctrl .lbl{display:none}
 }
+
+/* ---------- mobile: carousels, tighter rhythm, ask inside the phone ---------- */
+.dots,.sug{display:none}
+.sg{flex:none;border:1px solid #2a3942;background:#1f2c34;color:#e9edef;border-radius:18px;padding:9px 14px;font:500 15px/1.2 -apple-system,"SF Pro Text",var(--body);cursor:pointer;white-space:nowrap}
+.sg.on{border-color:#00a884;color:#7ae3c3}
+.sg.used:not(.on){opacity:.55}
+@media (max-width:1050px){
+  .wrap{--gut:32px}
+  .band{padding:72px 0}
+  .hero{padding:48px 0 56px}
+  .prob,.never,.faq{gap:32px}
+  .car{display:flex!important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;margin-left:calc(-1*var(--gut));margin-right:calc(-1*var(--gut));padding:4px var(--gut) 6px;scroll-padding-inline:var(--gut);scrollbar-width:none;border-top:0!important}
+  .car::-webkit-scrollbar{display:none}
+  .car>*{flex:0 0 min(84%,420px);scroll-snap-align:start}
+  .car:not(.board)>*{background:#fff;border:1px solid var(--rule)!important;border-radius:18px;padding:22px 20px!important}
+  .dots{display:flex;justify-content:center;gap:2px;margin-top:12px}
+  .dots button{width:24px;height:24px;border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center}
+  .dots button:after{content:"";width:7px;height:7px;border-radius:99px;background:var(--rule);transition:width .25s,background .25s}
+  .dots button.on:after{width:20px;background:var(--ink)}
+  .board.car{height:auto;max-width:none;padding-top:34px;padding-bottom:24px}
+  .board.car>.spec{position:relative;left:auto!important;top:auto!important;right:auto;transform:none;width:auto}
+  .board.car .stamp{left:auto!important;right:10px!important;top:-24px!important;font-size:24px}
+  .try{display:flex;flex-direction:column;gap:0}
+  .try>div:first-child{display:contents}
+  #qs{display:none}
+  .try .fine{order:2}
+  #tryPhone{order:1;align-self:center;margin-top:24px}
+  .sug{display:flex;gap:7px;overflow-x:auto;padding:8px 10px 2px;scrollbar-width:none}
+  .sug::-webkit-scrollbar{display:none}
+}
+@media (max-width:560px){.wrap{--gut:20px}}
 </style>
 </head>
 <body>
@@ -333,7 +364,7 @@ footer p+p{margin-top:8px}
 <section class="hero"><div class="wrap">
   <div>
     <h1>Before you forward it, Confam it.</h1>
-    <p class="lede">Confam is an automated fact-checking account for Nigeria's 2027 elections. Tag it under any post on X, Instagram or Facebook, or message it on WhatsApp. It replies with what INEC has actually published, names the source, and answers in English, Pidgin, Yorùbá, Hausa or Igbo, by text or voice note.</p>
+    <p class="lede">Confam is an AI-powered tool that helps INEC fight election misinformation online. Voters tag it under any post on X, Instagram or Facebook, or message it on WhatsApp, and it replies with what INEC has actually published, names the source, and answers in English, Pidgin, Yorùbá, Hausa or Igbo, by text or voice note. Every question it receives also shows INEC which false claims are spreading, so the Commission can respond early.</p>
     <div class="acts">
       <button class="b b-ink" data-play><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3" /></svg> Watch the 1-minute demo</button>
       <a class="b b-line" href="#ask"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg> Ask Confam a question</a>
@@ -343,7 +374,7 @@ footer p+p{margin-top:8px}
     </div>
   </div>
 
-  <div class="board" aria-label="Examples of claims checked by Confam">
+  <div class="board car" aria-label="Examples of claims checked by Confam">
     <div class="spec s1"><div class="inner xcard">
       <div class="hd"><div class="dot" style="background:#9d1c15">N</div><div><b>Naija Updates</b> <span>@naija_updates · 4m</span></div></div>
       BREAKING: Presidential election moved to March 2027. Share before they delete it.
@@ -373,7 +404,7 @@ footer p+p{margin-top:8px}
     <p class="intro">A fake postponement notice or a doctored result sheet can be seen by millions in an hour. The correct information usually exists, but it sits in INEC press releases and PDFs, mostly in English, where most voters never look.</p>
     <p class="pull">INEC's chairman has warned of “the weaponisation of AI-driven disinformation” ahead of 2027.<cite>Prof. Joash Amupitan, INEC Chairman, 2026</cite></p>
   </div>
-  <div class="facts">
+  <div class="facts car">
     <div class="fact"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></svg><div><p>INEC names voter apathy, a lingering trust deficit and misinformation among the key challenges facing the 2027 elections.</p><cite>INEC national readiness tour, November 2026</cite></div></div>
     <div class="fact"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /> <circle cx="9" cy="9" r="2" /> <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg><div><p>INEC is reviewing suspected AI-generated photographs found in the preliminary voters register.</p><cite>INEC statement, 28 October 2026</cite></div></div>
     <div class="fact"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></svg><div><p>The Presidential and National Assembly elections hold on 16 January 2027, with Governorship and State Assembly elections on 6 February.</p><cite>INEC 2027 election timetable</cite></div></div>
@@ -381,7 +412,7 @@ footer p+p{margin-top:8px}
 </div></section>
 
 <section class="demo" id="demo"><div class="wrap">
-  <h2 class="hd2">One account, four apps, sixty seconds.</h2>
+  <h2 class="hd2">One AI tool, four apps, sixty seconds.</h2>
   <p class="intro">Play it here, or present it full screen. Arrow keys move between scenes and the space bar pauses.</p>
   <div class="stage" id="stage">
     <div class="tabs" id="tabs"></div>
@@ -400,7 +431,7 @@ footer p+p{margin-top:8px}
 <section class="band" id="verdicts"><div class="wrap">
   <h2 class="hd2">Every answer carries one of three stamps.</h2>
   <p class="intro">Confam never answers without saying how sure it is, and never states a fact without showing where it came from.</p>
-  <div class="verdicts">
+  <div class="verdicts car">
     <div class="vc"><div class="stamp green">Confirmed<small>Confam</small></div><h3>An official source backs it</h3><p>Confam confirms the claim and links the INEC publication it matches, with the date it was published.</p><p class="ex">“Final register out on 15 December 2026” matches INEC's November statement.</p></div>
     <div class="vc"><div class="stamp red" style="--r:rotate(3deg)">False<small>Confam</small></div><h3>An official source contradicts it</h3><p>Confam corrects the claim in the same thread, where the people who saw the lie will see the correction.</p><p class="ex">“Election moved to March” is contradicted by INEC's timetable.</p></div>
     <div class="vc"><div class="stamp blue" style="--r:rotate(-2deg)">Under review<small>Confam</small></div><h3>No source yet</h3><p>Confam says it can't verify the claim, hands it to a human fact-checker, and comes back with the result.</p><p class="ex">“PVC collection ends tomorrow” has no INEC source, so a person checks it.</p></div>
@@ -415,13 +446,13 @@ footer p+p{margin-top:8px}
     <div class="lrow" id="lrow"><span>Reply in</span></div>
     <p class="fine">These answers are loaded in advance for the demo. The working version writes each answer from its library of INEC publications and published fact-checks.</p>
   </div>
-  <div class="iph" data-fit="780" id="tryPhone"></div>
+  <div class="iph" data-fit="780" data-vh="90" id="tryPhone"></div>
 </div></section>
 
 <section class="band" id="how"><div class="wrap">
   <h2 class="hd2">From a tag to a sourced answer.</h2>
-  <p class="intro">The same engine sits behind every app. It can only answer from sources it has been given, and it knows when to stop and ask a person.</p>
-  <div class="proc">
+  <p class="intro">The same AI engine sits behind every app. It can only answer from sources it has been given, it knows when to stop and ask a person, and it reports the claims it sees back to INEC.</p>
+  <div class="proc car">
     <div class="st"><div class="n"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20"/></svg></div><div class="num">Step 1</div><h3>Someone asks</h3><p>A voter tags Confam under a post, comments on its page, or sends a message, screenshot or voice note.</p></div>
     <div class="st"><div class="n"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2" /> <path d="M17 3h2a2 2 0 0 1 2 2v2" /> <path d="M21 17v2a2 2 0 0 1-2 2h-2" /> <path d="M7 21H5a2 2 0 0 1-2-2v-2" /> <path d="M7 8h8" /> <path d="M7 12h10" /> <path d="M7 16h6" /></svg></div><div class="num">Step 2</div><h3>Confam reads the claim</h3><p>It pulls the text out of images, transcribes voice notes and works out which language to answer in.</p></div>
     <div class="st"><div class="n"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></svg></div><div class="num">Step 3</div><h3>It looks for a source</h3><p>It searches INEC publications and published fact-checks, and checks images for signs of editing.</p></div>
@@ -433,7 +464,7 @@ footer p+p{margin-top:8px}
 <section class="band" id="languages"><div class="wrap">
   <h2 class="hd2">The same answer, in the language you think in.</h2>
   <p class="intro">Voice notes are how many Nigerians use WhatsApp. Confam understands spoken questions and replies with a voice note in the same language. Every translation is checked by native speakers before launch.</p>
-  <div class="lang-tbl" id="langtbl"></div>
+  <div class="lang-tbl car" id="langtbl"></div>
 </div></section>
 
 <section class="band" id="never"><div class="wrap never">
@@ -441,7 +472,7 @@ footer p+p{margin-top:8px}
     <h2 class="hd2">What Confam will never do.</h2>
     <p class="intro">These rules are built into the system, not left to the AI model's judgement.</p>
   </div>
-  <div class="nv">
+  <div class="nv car">
     <div class="nvr"><b>Guess.</b><p>If no verified source supports an answer, Confam says so and passes the question to a human fact-checker.</p></div>
     <div class="nvr"><b>Take sides.</b><p>It doesn't comment on parties or candidates, and it won't tell anyone how to vote.</p></div>
     <div class="nvr"><b>Declare results.</b><p>Results come from INEC. Confam only points people to what INEC has published.</p></div>
@@ -452,7 +483,7 @@ footer p+p{margin-top:8px}
 
 <section class="band" id="roadmap"><div class="wrap">
   <h2 class="hd2">Live before the first ballot.</h2>
-  <div class="road">
+  <div class="road car">
     <div class="rm"><div class="d"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></svg> 23 to 27 November 2026</div><h3>Validate</h3><p>Test real misinformation cases with fact-checkers and build the library of INEC sources.</p></div>
     <div class="rm"><div class="d"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></svg> 28 November to 13 December</div><h3>Build</h3><p>WhatsApp and social accounts, claim matching, the review queue, and voice replies in Pidgin plus one more language.</p></div>
     <div class="rm"><div class="d"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></svg> 15 to 16 December</div><h3>Demonstrate</h3><p>Live demo with an accuracy report, known limitations and a responsible-AI review.</p></div>
@@ -463,7 +494,8 @@ footer p+p{margin-top:8px}
 <section class="band" id="faq"><div class="wrap faq">
   <h2 class="hd2">Questions people ask first.</h2>
   <div class="fq">
-    <details open><summary>Who runs Confam? <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg></summary><p>Confam is an independent, nonpartisan project proposed to INEC. It always cites INEC's official publications, but it is not an INEC account and does not speak for the Commission.</p></details>
+    <details open><summary>Who runs Confam? <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg></summary><p>Confam is proposed as an AI tool for INEC: the Commission would run it to counter election misinformation online, with independent fact-checking partners reviewing the hard cases. Until INEC adopts it, it is an independent, nonpartisan proposal and does not speak for the Commission.</p></details>
+    <details><summary>What does INEC get from it? <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg></summary><p>A live picture of which false claims are spreading, on which platforms and in which languages, built from the questions voters send. INEC's team can spot a rumour early and publish a correction before it peaks.</p></details>
     <details><summary>How does it avoid wrong answers? <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg></summary><p>It can only answer from a curated library of verified sources: INEC publications and fact-checks published by recognised fact-checking organisations. When the library has no answer, it says so and passes the question to a person.</p></details>
     <details><summary>Could someone use it to push a party or candidate? <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg></summary><p>No. Questions about who to vote for are refused, it never comments on parties or candidates, and it never announces results. Those rules are enforced by the system itself.</p></details>
     <details><summary>What happens to my messages and phone number? <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /> <path d="M12 5v14" /></svg></summary><p>Only what's needed to reply is processed. Data is encrypted, deleted on a fixed schedule, never sold or shared, and handled in line with the Nigeria Data Protection Act 2023.</p></details>
@@ -494,10 +526,13 @@ const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelecto
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- hero stamps: the one orchestrated moment ---------- */
-$$('.board [data-at]').forEach(el=>{
-  const fire=()=>el.classList.add(el.classList.contains('stamp')?'hit':'in');
-  if(reduce){el.style.opacity=el.classList.contains('stamp')?.9:1;el.style.transform=el.classList.contains('stamp')?'var(--r)':'none';el.classList.add('in');}
-  else setTimeout(fire,+el.dataset.at);
+// desktop: timed sequence; mobile carousel: each card stamps when it is swiped into view
+const fireEl=el=>el.classList.add(el.classList.contains('stamp')?'hit':'in');
+const mob=matchMedia('(max-width:1050px)').matches;
+$$('.board .spec').forEach(sp=>{const els=$$('[data-at]',sp);
+  if(reduce)els.forEach(el=>{el.style.opacity=el.classList.contains('stamp')?.9:1;el.style.transform=el.classList.contains('stamp')?'var(--r)':'none';el.classList.add('in');});
+  else if(mob){const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){els.forEach((el,k)=>setTimeout(()=>fireEl(el),250+k*400));o.disconnect();}},{threshold:.6});o.observe(sp);}
+  else els.forEach(el=>setTimeout(()=>fireEl(el),+el.dataset.at));
 });
 
 /* ---------- iPhone 14 Pro ---------- */
@@ -507,8 +542,10 @@ const SB={
  bat:'<svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" stroke="#fff" stroke-opacity=".4" fill="none"/><rect x="2" y="2" width="20" height="9" rx="2" fill="#fff"/><path d="M25 4.5v4c.8-.3 1.3-1.1 1.3-2s-.5-1.7-1.3-2z" fill="#fff" fill-opacity=".45"/></svg>'
 };
 const iphone=inner=>`<div class="iphone"><span class="k k1"></span><span class="k k2"></span><span class="k k3"></span><span class="k k4"></span><div class="screen"><div class="island"></div><div class="sbar"><span>9:41</span><span class="r">${SB.sig}${SB.wifi}${SB.bat}</span></div><div class="app">${inner}</div><div class="homei"></div></div></div>`;
-function fit(h){const ph=h.querySelector('.iphone');if(!ph)return;const maxH=+h.dataset.fit||780;const s=Math.min(maxH/892,(Math.min(innerWidth-40,433))/433,1);ph.style.transform=`scale(${s})`;h.style.width=433*s+'px';h.style.height=892*s+'px';}
-const fitAll=()=>$$('.iph').forEach(fit);addEventListener('resize',fitAll);
+function fit(h){const ph=h.querySelector('.iphone');if(!ph)return;let maxH=+h.dataset.fit||780;if(h.dataset.vh&&innerWidth<=1050)maxH=Math.min(maxH,Math.max(600,innerHeight-h.dataset.vh));const s=Math.min(maxH/892,(Math.min(innerWidth-40,433))/433,1);ph.style.transform=`scale(${s})`;h.style.width=433*s+'px';h.style.height=892*s+'px';}
+const fitAll=()=>$$('.iph').forEach(fit);
+// mobile browsers fire resize when the URL bar hides; only refit there if the width changed
+let lastW=innerWidth;addEventListener('resize',()=>{if(innerWidth>1050||innerWidth!==lastW){lastW=innerWidth;fitAll();}});
 const wave=(n=30,id='')=>`<div class="wv" ${id?`id="${id}"`:''}>`+Array.from({length:n},(_,i)=>`<i style="height:${25+Math.round(Math.abs(Math.sin(i*1.9)*Math.cos(i*.7))*75)}%;animation-delay:${(i%9)*.07}s"></i>`).join('')+'</div>';
 const cf=()=>`<div class="av cf">${ic('check')}</div>`;
 const av=(t,bg)=>`<div class="av" style="background:${bg}">${t}</div>`;
@@ -544,7 +581,7 @@ const appIG=()=>`<div class="ig" style="display:flex;flex-direction:column;heigh
  </div></div>`;
 
 const appFB=()=>`<div class="fb" style="display:flex;flex-direction:column;height:100%">
- <div class="abar">${ic('chevron-left')}${cf()}<div style="flex:1"><div class="t">Confam</div><div class="s">Automated account</div></div>${ic('info')}</div>
+ <div class="abar">${ic('chevron-left')}${cf()}<div style="flex:1"><div class="t">Confam</div><div class="s">AI assistant</div></div>${ic('info')}</div>
  <div class="feed"><div class="chat">
   <div style="text-align:center;font-size:12px;opacity:.5;margin:6px 0">Today 9:41 AM</div>
   <div class="bub me pop" data-t="400">When will the final voters register come out?</div>
@@ -566,6 +603,7 @@ const appWA=(mode)=>`<div class="wa" style="display:flex;flex-direction:column;h
  :`<div class="enc">${ic('lock')}<span>Messages are end-to-end encrypted. Confam answers only from verified sources.</span></div>
   <div class="bub th">Hello, I'm Confam. Ask me about the 2027 elections, or forward a post you're not sure about.<div class="tm">9:41</div></div>`}
  </div></div>
+ ${mode==='try'?'<div class="sug" id="sug" aria-label="Questions to ask"></div>':''}
  <div class="inb" style="background:#0b141a">${ic('plus')}<div class="fl">Message</div><div class="mic">${ic('mic')}</div></div></div>`;
 
 /* ---------- demo ---------- */
@@ -582,7 +620,7 @@ const SC=[
  {tab:'Instagram',ico:'camera',plat:'On Instagram',h:'When it can\'t confirm something, it says so.',p:'No source means no verdict. Confam flags the post for a human fact-checker, says so in the comments, and follows up once it\'s checked.',app:appIG},
  {tab:'Facebook',ico:'message-circle',plat:'On Facebook',h:'Ask a question, get INEC\'s answer and the date it was published.',p:'Messenger works the same way. Ask who to vote for and Confam politely declines, every time.',app:appFB},
  {tab:'WhatsApp',ico:'phone',plat:'On WhatsApp',h:'Send a voice note, get one back in your language.',p:'Forward a suspicious image or speak your question. Confam replies by voice in Yorùbá, Hausa, Igbo, Pidgin or English.',langs:true,app:()=>appWA('demo')},
- {tab:'The rules',ico:'shield-check',plat:'The rules',h:'Tag it. Confam it.',p:'An automated account that only shares what can be checked, on the apps Nigerians already use, in the languages they speak.',rules:true}
+ {tab:'The rules',ico:'shield-check',plat:'The rules',h:'Tag it. Confam it.',p:'An AI tool for INEC that only shares what can be checked, on the apps Nigerians already use, in the languages they speak.',rules:true}
 ];
 $('#tabs').innerHTML=SC.map((s,i)=>`<button class="tab" data-i="${i}"><span class="tr"><i></i></span>${s.tab}</button>`).join('');
 const bars=$$('#tabs .tr i'),tabs=$$('#tabs .tab');
@@ -614,17 +652,17 @@ document.addEventListener('fullscreenchange',()=>setTimeout(()=>render(cur),60))
 
 /* ---------- ask ---------- */
 const QA=[
- {q:'Has the presidential election been moved to March?',k:'Viral claim',i:'image',v:'f',src:'INEC 2027 election timetable',
+ {q:'Has the presidential election been moved to March?',sq:'Election moved to March?',k:'Viral claim',i:'image',v:'f',src:'INEC 2027 election timetable',
   a:{English:'No postponement has been announced. INEC\'s timetable fixes the Presidential and National Assembly elections for <b>16 January 2027</b>, and Governorship and State Assembly for <b>6 February 2027</b>.',
    Pidgin:'No be true. INEC never shift am. Presidential and National Assembly election go hold for <b>16 January 2027</b>, Governorship and State Assembly for <b>6 February 2027</b>.',
    'Yorùbá':'Rárá. Ìdìbò ààrẹ yóò wáyé ní ọjọ́ kẹrìndínlógún, oṣù kìíní, ọdún 2027.',Hausa:'A’a. Za a yi zaɓen shugaban ƙasa ranar 16 ga Janairu, 2027.',Igbo:'Mba. A ga-eme ntuli aka onye isi ala n’ụbọchị 16 Jenụwarị, 2027.'}},
- {q:'When will the final voters register be published?',k:'Question',i:'file-text',v:'t',src:'INEC statement, November 2026',
+ {q:'When will the final voters register be published?',sq:'When is the final register out?',k:'Question',i:'file-text',v:'t',src:'INEC statement, November 2026',
   a:{English:'INEC says the final register of voters will be certified and published on <b>15 December 2026</b>.',Pidgin:'INEC talk say dem go certify and publish the final voters register for <b>15 December 2026</b>.'}},
- {q:'Are there AI-generated photos in the voters register?',k:'Viral claim',i:'image',v:'t',src:'INEC statement, 28 October 2026',
+ {q:'Are there AI-generated photos in the voters register?',sq:'AI photos in the register?',k:'Viral claim',i:'image',v:'t',src:'INEC statement, 28 October 2026',
   a:{English:'INEC says suspicious photos in the <b>preliminary</b> register were flagged during the display exercise and are under review. The preliminary register is not the final certified register.',Pidgin:'INEC don talk say the suspicious photos for the preliminary register, dem don flag am and dem dey review am. The preliminary register no be the final one.'}},
- {q:'“PVC collection ends tomorrow in all LGAs.” Is that true?',k:'Forwarded post',i:'forward',v:'r',
+ {q:'“PVC collection ends tomorrow in all LGAs.” Is that true?',sq:'“PVC collection ends tomorrow”',k:'Forwarded post',i:'forward',v:'r',
   a:{English:'We can\'t verify this yet, so it has gone to a human fact-checker. We\'ll message you once it\'s checked. PVC deadlines are only announced on INEC\'s official channels.',Pidgin:'We never fit confirm am yet, so we don send am to human fact-checker. We go message you once e don check. Na only INEC official channels dey announce PVC deadline.'}},
- {q:'Who should I vote for?',k:'Question',i:'scale',v:'',
+ {q:'Who should I vote for?',sq:'Who should I vote for?',k:'Question',i:'scale',v:'',
   a:{English:'I don\'t recommend parties or candidates. I can help you find out how and where to vote.',Pidgin:'I no dey support any party or candidate. But I fit help you know how and where you go vote.'}}
 ];
 const LANGS=['English','Pidgin','Yorùbá','Hausa','Igbo'];let lang='English',busy=false;
@@ -632,8 +670,11 @@ $('#tryPhone').innerHTML=iphone(appWA('try'));
 $('#qs').innerHTML=QA.map((x,i)=>`<button class="q" data-i="${i}">${ic(x.i)}<span>${x.q}</span><span class="kind">${x.k}</span></button>`).join('');
 $('#lrow').insertAdjacentHTML('beforeend',LANGS.map(l=>`<button class="chip ${l===lang?'on':''}" data-l="${l}">${l}</button>`).join(''));
 $$('#lrow .chip').forEach(c=>c.onclick=()=>{lang=c.dataset.l;$$('#lrow .chip').forEach(x=>x.classList.toggle('on',x===c));});
-$$('.q').forEach(b=>b.onclick=()=>{
- if(busy)return;busy=true;$$('.q').forEach(x=>x.classList.toggle('on',x===b));
+// on mobile the questions sit inside the phone as WhatsApp-style suggestion chips
+$('#sug').innerHTML=QA.map((x,i)=>`<button class="sg" data-i="${i}">${x.sq}</button>`).join('');
+const QB=$$('.q,.sg');
+QB.forEach(b=>b.onclick=()=>{
+ if(busy)return;busy=true;QB.forEach(x=>{const m=x.dataset.i===b.dataset.i;x.classList.toggle('on',m);if(m)x.classList.add('used');});
  const x=QA[+b.dataset.i],chat=$('#trychat'),fd=chat.closest('.feed');
  const add=h=>{const d=document.createElement('div');d.innerHTML=h;const e=d.firstElementChild;e.classList.add('pop');chat.appendChild(e);requestAnimationFrame(()=>requestAnimationFrame(()=>e.classList.add('in')));fd.scrollTop=fd.scrollHeight;return e;};
  add(`<div class="bub me">${x.q}<div class="tm">9:41 ${ticks}</div></div>`);
@@ -646,6 +687,16 @@ $$('.q').forEach(b=>b.onclick=()=>{
 /* ---------- languages ---------- */
 const LT=[['English','Nationwide',VL[4][1]],['Pidgin','Nationwide',VL[3][1]],['Yorùbá','South-West',VL[0][1]],['Hausa','North',VL[1][1]],['Igbo','South-East',VL[2][1]]];
 $('#langtbl').innerHTML=LT.map(l=>`<div class="lr"><div class="ln">${l[0]}<small>${l[1]}</small></div><div class="txt">${l[2]}</div><div class="md"><span>${ic('message-circle')}Text</span><span>${ic('audio-lines')}Voice</span></div></div>`).join('');
+
+/* ---------- carousels (mobile only; dots hidden on desktop) ---------- */
+$$('.car').forEach(c=>{const it=[...c.children];if(it.length<2)return;
+ const d=document.createElement('div');d.className='dots';
+ d.innerHTML=it.map((_,i)=>`<button aria-label="Show item ${i+1} of ${it.length}"></button>`).join('');c.after(d);const bs=[...d.children];
+ const idx=()=>{if(c.scrollLeft>=c.scrollWidth-c.clientWidth-4)return it.length-1;return Math.round(c.scrollLeft/(it[1].offsetLeft-it[0].offsetLeft||1));};
+ const upd=()=>{const k=idx();bs.forEach((b,j)=>b.classList.toggle('on',j===k));};
+ c.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});
+ bs.forEach((b,j)=>b.onclick=()=>c.scrollTo({left:it[j].offsetLeft-it[0].offsetLeft,behavior:reduce?'auto':'smooth'}));upd();
+});
 
 /* ---------- init ---------- */
 fitAll();go(0);playing=false;setB();
