@@ -133,21 +133,21 @@ button{font-family:inherit;color:inherit}
 .dark{background:var(--night);color:var(--ntext)}
 .demo{padding:100px 0 110px}
 .demo .h2{color:#fff}.demo .intro{color:var(--nsoft)}
-.stage{margin-top:44px;border:1px solid var(--nline);border-radius:18px;background:#0A0C09;overflow:hidden}
-.stage:fullscreen{border-radius:0;display:flex;flex-direction:column;justify-content:center}
-.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:20px 24px 0}
+.stage{margin-top:44px;border-top:1px solid var(--nline)}
+.stage:fullscreen{background:var(--night);padding:0 40px;display:flex;flex-direction:column;justify-content:center}
+.tabs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;padding:20px 0 0}
 .tab{background:none;border:0;cursor:pointer;text-align:left;color:var(--nsoft);font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em}
 .tab .tr{display:block;height:3px;background:var(--nline);border-radius:3px;overflow:hidden;margin-bottom:9px}
 .tab .tr i{display:block;height:100%;width:0;background:var(--green2)}
 .tab.cur{color:#fff}
-.scene{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:64px;align-items:center;padding:24px 60px 18px;min-height:640px}
+.scene{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:64px;align-items:center;padding:24px 0 18px;min-height:640px}
 .cap h3{font-family:var(--disp);font-stretch:70%;font-weight:850;text-transform:uppercase;font-size:clamp(34px,3.8vw,56px);line-height:.95;color:#fff;margin-bottom:18px}
 .cap p{color:var(--ntext);font-size:18px;max-width:27em}
 .cap .plat{display:inline-flex;align-items:center;gap:8px;color:var(--green2);font-family:var(--mono);font-size:12.5px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px}
 .cap .langs{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
 .cap .lg{font-size:14px;padding:6px 12px;border-radius:5px;border:1px solid #33382F;color:var(--ntext);transition:background .3s,color .3s}
 .cap .lg.on{background:var(--green2);border-color:var(--green2);color:#04170e;font-weight:600}
-.ctrl{display:flex;align-items:center;gap:12px;padding:6px 24px 22px;color:var(--nsoft);font-size:13.5px}
+.ctrl{display:flex;align-items:center;gap:12px;padding:6px 0 0;color:var(--nsoft);font-size:13.5px}
 .ctrl .t{font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums;margin-right:auto}
 .ctrl button{display:inline-grid;place-items:center;min-width:42px;height:42px;padding:0 12px;border-radius:6px;border:1px solid #33382F;background:var(--night2);color:#fff;cursor:pointer;font-size:14px;font-weight:600;gap:8px;grid-auto-flow:column}
 .ctrl button:hover{background:#23281f}
@@ -273,6 +273,23 @@ button{font-family:inherit;color:inherit}
 .out p{color:var(--ink2);font-size:16px}
 .out .ex{margin-top:14px;font-family:var(--mono);font-size:12px;line-height:1.55;color:var(--soft);border-left:3px solid var(--rule);padding-left:10px}
 
+/* ---------- 24/7 the vault ---------- */
+.vault{padding:110px 0;border-bottom:1px solid var(--rule)}
+.vt-g{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.vnote{margin-top:22px;padding-left:16px;border-left:3px solid var(--green);font-weight:600;max-width:32em}
+.vflow{border-right:3px solid var(--green);padding-right:26px;position:relative;display:grid;gap:34px}
+.vflow:after{content:"VAULT";position:absolute;right:0;top:50%;transform:translate(50%,-50%) rotate(90deg);font-family:var(--mono);font-size:11px;letter-spacing:.3em;color:#fff;background:var(--green);padding:3px 8px;border-radius:3px}
+.ll{display:block;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-bottom:10px}
+.lt2{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 22%);mask-image:linear-gradient(90deg,transparent,#000 22%)}
+.trk{display:flex;width:max-content;gap:30px;animation:feed 20s linear infinite}
+.trk.rev{animation-duration:14s}
+@keyframes feed{from{transform:translateX(-50%)}to{transform:none}}
+.tk{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-stretch:80%;font-weight:700;font-size:clamp(19px,1.9vw,25px);white-space:nowrap}
+.tk .ico{color:var(--green)}
+#trk2 .tk,#trk2 .ico{color:var(--soft)}
+.vcount b{display:block;font-family:var(--disp);font-stretch:62%;font-weight:900;font-size:clamp(56px,6vw,88px);line-height:1;font-variant-numeric:tabular-nums}
+.vcount span{font-family:var(--mono);font-size:11.5px;color:var(--soft);text-transform:uppercase}
+
 /* ---------- 09:41:06 the reply: languages ---------- */
 .voice{padding:110px 0;border-bottom:1px solid var(--rule);background:var(--paper2)}
 .vg{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:center}
@@ -281,6 +298,7 @@ button{font-family:inherit;color:inherit}
 .lt{border:1px solid #2a3942;background:none;color:#aebac1;border-radius:6px;padding:7px 12px;font-size:14px;cursor:pointer;text-align:left;line-height:1.15;transition:background .3s,color .3s}
 .lt small{display:block;font-size:10.5px;opacity:.7;font-family:var(--mono);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
 .lt.on{background:#00a884;border-color:#00a884;color:#04170e}
+.lt.more{border-style:dashed;cursor:default;color:#8696a0}
 .vline{font-family:var(--disp);font-stretch:85%;font-weight:600;font-size:clamp(26px,3vw,40px);line-height:1.15;min-height:3.5em;color:#fff}
 .vline .w{display:inline-block;opacity:0;filter:blur(6px);transform:translateY(8px);animation:wIn .5s forwards}
 @keyframes wIn{to{opacity:1;filter:none;transform:none}}
@@ -298,20 +316,19 @@ button{font-family:inherit;color:inherit}
 .ticks{list-style:none;margin-top:28px;display:grid;gap:12px}
 .ticks li{display:flex;gap:10px;align-items:flex-start;color:var(--ntext)}
 .ticks .ico{color:var(--green2);margin-top:4px}
-.dash{background:#0A0C09;border:1px solid var(--nline);border-radius:16px;padding:20px;font-size:14px;box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+.dash{font-size:14px;border-top:2px solid var(--green2);padding-top:16px}
 .dh{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;margin-bottom:16px}
 .dh .mono{margin-left:auto;color:var(--nsoft);font-weight:400;border:1px solid var(--nline);padding:3px 7px;border-radius:4px;font-size:11px}
 .radar{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--green2);position:relative;overflow:hidden;flex:none}
 .radar:after{content:"";position:absolute;inset:0;background:conic-gradient(from 0deg,rgba(25,178,107,.85),transparent 30%);animation:spin 2s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
-.kpis div{background:var(--night2);border-radius:10px;padding:12px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;border-bottom:1px solid var(--nline);padding-bottom:14px}
 .kpis b{display:block;font-family:var(--disp);font-stretch:68%;font-weight:850;font-size:32px;color:#fff;font-variant-numeric:tabular-nums;line-height:1;margin-bottom:4px}
 .kpis span{font-size:12px;color:var(--nsoft)}
-.rows{display:grid;gap:8px}
-.row{display:grid;grid-template-columns:1fr auto;gap:8px 12px;background:var(--night2);border-radius:10px;padding:11px 12px;transition:background .5s}
-.row.flash{background:#24321f}
-.row .c{color:#fff;font-size:14px;line-height:1.3}
+.rows{display:grid}
+.row{display:grid;grid-template-columns:1fr auto;gap:8px 12px;padding:13px 0;border-bottom:1px solid var(--nline)}
+.row .c{color:#fff;font-size:14px;line-height:1.3;transition:color .5s}
+.row.flash .c{color:var(--green2)}
 .row .meta{grid-column:1/-1;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;color:var(--nsoft)}
 .row .meta .wh{width:92px;flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .bar{flex:1;height:5px;border-radius:3px;background:#262b23;overflow:hidden}
@@ -320,8 +337,8 @@ button{font-family:inherit;color:inherit}
 .row .cnt{width:44px;text-align:right;color:#fff;font-variant-numeric:tabular-nums}
 .pill{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;padding:3px 7px;border-radius:4px;align-self:start;font-weight:600;white-space:nowrap}
 .pill.f{background:#d0262f2e;color:#ff8a8f}.pill.t{background:#19b26b2e;color:#5fe0a0}.pill.r{background:#2f4fc04a;color:#a9b9ff}
-.splits{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.split{background:var(--night2);border-radius:10px;padding:12px}
+.splits{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:4px}
+.split{padding-top:14px}
 .split h4{font-family:var(--mono);font-size:10.5px;font-weight:400;text-transform:uppercase;letter-spacing:.08em;color:var(--nsoft);margin-bottom:6px}
 .sb{display:grid;grid-template-columns:66px 1fr 30px;gap:8px;align-items:center;font-size:12.5px;margin-top:5px;color:var(--ntext)}
 .sb .bar{height:6px}.sb .bar i{background:var(--green2)}
@@ -402,13 +419,14 @@ footer p+p{margin-top:8px}
 
 @media (max-width:1050px){
   .nav{display:none}.top .b{margin-left:auto}
-  .hero-g,.sp-g,.vg,.ig2,.faq-g,footer .wrap{grid-template-columns:1fr}
+  .hero-g,.sp-g,.vg,.vt-g,.ig2,.faq-g,footer .wrap{grid-template-columns:1fr}
   .hero-g{gap:28px}.sp-g,.vg,.ig2,.faq-g{gap:40px}
   .stream{height:470px;margin:0 calc(-1*var(--gut))}
   .belt{padding:0 var(--gut)}
-  .spread,.check,.voice,.inec,.ask,.never,.demo{padding:76px 0}
+  .spread,.check,.vault,.voice,.inec,.ask,.never,.demo{padding:76px 0}
+  .vflow{padding-right:20px}
   .road,.faq{padding:70px 0}
-  .scene{grid-template-columns:1fr;justify-items:center;padding:24px;gap:36px}
+  .scene{grid-template-columns:1fr;justify-items:center;padding:24px 0;gap:36px}
   .tabs{grid-template-columns:repeat(3,1fr);row-gap:12px}
   .rules-d{width:100%}
   .pipe{grid-template-columns:1fr;margin-top:40px}
@@ -471,7 +489,7 @@ footer p+p{margin-top:8px}
 <header class="top"><div class="wrap">
   <a class="brand" href="#top" aria-label="Confam home"><svg class="seal" aria-hidden="true"><use href="#seal"/></svg><span class="wm">Confam</span></a>
   <span class="hclock" id="hclock" aria-hidden="true"><i></i><b>09:12</b>A post goes up</span>
-  <nav class="nav" aria-label="Sections"><a href="#demo">Demo</a><a href="#check">How it decides</a><a href="#inec">For INEC</a><a href="#ask">Try it</a><a href="#faq">Questions</a></nav>
+  <nav class="nav" aria-label="Sections"><a href="#demo">Demo</a><a href="#check">How it decides</a><a href="#vault">The vault</a><a href="#inec">For INEC</a><a href="#ask">Try it</a><a href="#faq">Questions</a></nav>
   <button class="b b-ink b-sm" data-play><i data-ic="play"></i><span class="lbl">Watch demo</span></button>
 </div><div class="prog"><i id="prog"></i></div></header>
 
@@ -480,9 +498,8 @@ footer p+p{margin-top:8px}
 <!-- 09:12 -->
 <section class="hero" data-time="09:12" data-lbl="A post goes up"><div class="wrap hero-g">
   <div>
-    <p class="kicker mono"><i></i>AI misinformation desk · proposed to INEC for 2027</p>
     <h1 class="hx"><span class="ln"><span>Before you</span></span><span class="ln"><span>forward it,</span></span><span class="ln"><span><em class="g">Confam<svg class="ul" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M3 14 C 80 4, 200 4, 297 10"/></svg></em> it.</span></span></h1>
-    <p class="lede">Confam is an AI-powered tool that helps INEC fight election misinformation online. Voters tag it under a post on X, Instagram or Facebook, or message it on WhatsApp. It replies with what INEC has actually published, names the source, and speaks English, Pidgin, Yorùbá, Hausa or Igbo, by text or voice note.</p>
+    <p class="lede">Confam is an AI-powered tool that helps INEC fight election misinformation online. Voters tag it under a post on X, Instagram or Facebook, or message it on WhatsApp. It replies with what INEC has actually published, names the source, and speaks <span data-langs="or"></span>, by text or voice note, with more Nigerian languages to come.</p>
     <div class="acts">
       <button class="b b-ink" data-play><i data-ic="play"></i> Watch the 1-minute demo</button>
       <a class="b b-line" href="#ask"><i data-ic="message-circle"></i> Ask it a question</a>
@@ -500,7 +517,7 @@ footer p+p{margin-top:8px}
   <div class="ch"><span class="tm">09:40</span>Twenty-eight minutes later</div>
   <div class="sp-g">
     <div class="meter rv" data-io id="meter">
-      <div class="lab"><span>One fake postponement notice</span><b>Spreading</b></div>
+      <div class="lab"><span>One piece of election misinformation</span><b>Spreading</b></div>
       <div class="big" id="views">0</div>
       <div class="big-l">views, and climbing</div>
       <svg class="spk" viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="spg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D0262F" stop-opacity=".45"/><stop offset="1" stop-color="#D0262F" stop-opacity="0"/></linearGradient></defs><path class="area" id="spa"/><path class="line" id="spl" pathLength="1"/></svg>
@@ -509,7 +526,7 @@ footer p+p{margin-top:8px}
     </div>
     <div class="rv">
       <h2 class="hx h2">The lie reaches the family group chat before the correction does.</h2>
-      <p class="intro">A fake postponement notice or a doctored result sheet can be seen by millions in an hour. The correct information usually exists, but it sits in INEC press releases and PDFs, mostly in English, where most voters never look.</p>
+      <p class="intro">Election misinformation can be seen by millions in an hour. The correct information usually exists, but it sits in INEC press releases and PDFs, mostly in English, where most voters never look.</p>
       <p class="pull">INEC's chairman has warned of “the weaponisation of AI-driven disinformation” ahead of 2027.<cite>Prof. Joash Amupitan, INEC Chairman, 2026</cite></p>
     </div>
   </div>
@@ -543,13 +560,13 @@ footer p+p{margin-top:8px}
 <section class="check" id="check" data-time="09:41:03" data-lbl="Confam checks"><div class="wrap">
   <div class="ch"><span class="tm">09:41:03</span>Three seconds inside Confam</div>
   <h2 class="hx h2 rv" data-io>Three steps, then one of three stamps.</h2>
-  <p class="intro rv" data-io>The same AI engine sits behind every app. It can only answer from sources it has been given, and it knows when to stop and ask a person.</p>
+  <p class="intro rv" data-io>The same AI engine sits behind every app. It only answers from verified sources in its vault, and it knows when to stop and ask a person.</p>
   <div class="pipe">
     <div class="node rv" data-io><span class="n">01</span><i data-ic="at-x"></i><b>Tagged</b><span>Under a post, in a comment, or by message, screenshot or voice note.</span></div>
     <div class="wire" aria-hidden="true"></div>
     <div class="node rv" data-io style="transition-delay:.12s"><span class="n">02</span><i data-ic="scan-text"></i><b>Read</b><span>Pulls the text out of images, transcribes voice notes and detects the language.</span></div>
     <div class="wire" aria-hidden="true"></div>
-    <div class="node rv" data-io style="transition-delay:.24s"><span class="n">03</span><i data-ic="search"></i><b>Searched</b><span>Against INEC publications and published fact-checks. Images are checked for signs of editing.</span></div>
+    <div class="node rv" data-io style="transition-delay:.24s"><span class="n">03</span><i data-ic="search"></i><b>Searched</b><span>Against the vault: INEC publications and published fact-checks, refreshed around the clock. Images are checked for signs of editing.</span></div>
   </div>
   <svg class="fork" viewBox="0 0 1200 110" preserveAspectRatio="none" aria-hidden="true">
     <path id="fk1" d="M1024 0 C1024 70 192 40 192 110"/><path id="fk2" d="M1024 0 C1024 70 600 40 600 110"/><path id="fk3" d="M1024 0 C1024 55 1008 55 1008 110"/>
@@ -564,12 +581,27 @@ footer p+p{margin-top:8px}
   </div>
 </div></section>
 
+<!-- around the clock -->
+<section class="vault" id="vault" data-time="24/7" data-lbl="The vault refills"><div class="wrap vt-g">
+  <div class="rv" data-io>
+    <div class="ch"><span class="tm">24/7</span>Behind every answer</div>
+    <h2 class="hx h2">A vault that refills itself.</h2>
+    <p class="intro">Confam crawls the internet and social media around the clock. New INEC publications and published fact-checks go straight into its vault of verified sources. Public posts teach it what people are saying, the words they use and the rumours just starting, so it spots misinformation sooner and matches claims better every day.</p>
+    <p class="vnote">It learns from everything it reads, but it only answers from what has been verified. A post never becomes a source just because it spread.</p>
+  </div>
+  <div class="vflow" aria-hidden="true">
+    <div><span class="ll">Verified sources: answers come from here</span><div class="lt2"><div class="trk" id="trk1"></div></div></div>
+    <div><span class="ll">Public posts: it learns from these</span><div class="lt2"><div class="trk rev" id="trk2"></div></div></div>
+    <div class="vcount"><b id="vcount">0</b><span>items read today · illustrative</span></div>
+  </div>
+</div></section>
+
 <!-- 09:41:06 -->
 <section class="voice" id="languages" data-time="09:41:06" data-lbl="Confam replies"><div class="wrap vg">
   <div class="rv" data-io>
     <div class="ch"><span class="tm">09:41:06</span>The reply</div>
     <h2 class="hx h2">In the language you think in.</h2>
-    <p class="intro">Voice notes are how many Nigerians use WhatsApp. Confam understands spoken questions and replies with a voice note in the same language. Every translation is checked by native speakers before launch.</p>
+    <p class="intro">Voice notes are how many Nigerians use WhatsApp. Confam understands spoken questions and replies with a voice note in the same language. Every translation is checked by native speakers before launch, and other Nigerian languages will be added after it.</p>
   </div>
   <div class="vbox rv" data-io id="vbox">
     <div class="ltabs" id="ltabs" role="tablist" aria-label="Reply language"></div>
@@ -611,7 +643,7 @@ footer p+p{margin-top:8px}
     <p class="intro">Pick a question and a reply language, and watch the answer arrive on WhatsApp.</p>
     <div class="qs" id="qs"></div>
     <div class="lrow" id="lrow"><span>Reply in</span></div>
-    <p class="fine">These answers are loaded in advance for the demo. The working version writes each answer from its library of INEC publications and published fact-checks.</p>
+    <p class="fine">These answers are loaded in advance for the demo. The working version writes each answer from its vault of INEC publications and published fact-checks.</p>
   </div>
   <div class="iph" data-fit="780" data-vh="90" id="tryPhone"></div>
 </div></section>
@@ -630,8 +662,8 @@ footer p+p{margin-top:8px}
     <div class="rail"><i id="railf"></i></div>
     <span class="now" id="now">Today</span>
     <div class="stops">
-      <div class="stop" data-from="2026-11-23"><div class="d">23 to 27 Nov 2026</div><h3>Validate</h3><p>Test real misinformation cases with fact-checkers and build the library of INEC sources.</p></div>
-      <div class="stop" data-from="2026-11-28"><div class="d">28 Nov to 13 Dec</div><h3>Build</h3><p>WhatsApp and social accounts, claim matching, the review queue, the INEC dashboard, and voice replies in Pidgin plus one more language.</p></div>
+      <div class="stop" data-from="2026-11-23"><div class="d">23 to 27 Nov 2026</div><h3>Validate</h3><p>Test real misinformation cases with fact-checkers and seed the vault with INEC sources.</p></div>
+      <div class="stop" data-from="2026-11-28"><div class="d">28 Nov to 13 Dec</div><h3>Build</h3><p>WhatsApp and social accounts, the vault crawler, claim matching, the review queue, the INEC dashboard, and voice replies in Pidgin plus one more language.</p></div>
       <div class="stop" data-from="2026-12-15"><div class="d">15 to 16 Dec</div><h3>Demonstrate</h3><p>Live demo with an accuracy report, known limitations and a responsible-AI review.</p></div>
       <div class="stop" data-from="2027-01-01"><div class="d">Jan to Feb 2027</div><h3>Pilot</h3><p>A controlled pilot during the election period with fact-checking partners, subject to approval.</p></div>
     </div>
@@ -642,10 +674,10 @@ footer p+p{margin-top:8px}
   <h2 class="hx h2">Questions people ask first.</h2>
   <div class="fq">
     <details open><summary>Who runs Confam? <i data-ic="plus"></i></summary><p>Confam is proposed as an AI tool for INEC: the Commission would run it to counter election misinformation online, with independent fact-checking partners reviewing the hard cases. Until INEC adopts it, it is an independent, nonpartisan proposal and does not speak for the Commission.</p></details>
-    <details><summary>How does it avoid wrong answers? <i data-ic="plus"></i></summary><p>It can only answer from a curated library of verified sources: INEC publications and fact-checks published by recognised fact-checking organisations. When the library has no answer, it says so and passes the question to a person.</p></details>
+    <details><summary>How does it avoid wrong answers? <i data-ic="plus"></i></summary><p>Its vault refills itself around the clock, but answers only ever cite verified sources: INEC publications and fact-checks published by recognised fact-checking organisations. Social media teaches it what to look for, never what to say. When the vault has no answer, it says so and passes the question to a person.</p></details>
     <details><summary>Could someone use it to push a party or candidate? <i data-ic="plus"></i></summary><p>No. Questions about who to vote for are refused, it never comments on parties or candidates, and it never announces results. Those rules are enforced by the system itself.</p></details>
-    <details><summary>What happens to my messages and phone number? <i data-ic="plus"></i></summary><p>Only what's needed to reply is processed. Data is encrypted, deleted on a fixed schedule, never sold or shared, and handled in line with the Nigeria Data Protection Act 2023. INEC's dashboard shows claims and trends, not who asked.</p></details>
-    <details><summary>Which languages does it speak? <i data-ic="plus"></i></summary><p>English, Nigerian Pidgin, Yorùbá, Hausa and Igbo at launch, by text and voice note. More Nigerian languages follow as the voice models and source library grow.</p></details>
+    <details><summary>What happens to my messages and phone number? <i data-ic="plus"></i></summary><p>Only what's needed to reply is processed. Data is encrypted, deleted on a fixed schedule, never sold or shared, and handled in line with the Nigeria Data Protection Act 2023. INEC's dashboard shows claims and trends, not who asked. The crawler reads public posts only, under each platform's rules.</p></details>
+    <details><summary>Which languages does it speak? <i data-ic="plus"></i></summary><p><span data-langs="and"></span> at launch, by text and voice note. Other Nigerian languages will be added as the voice models and the vault grow.</p></details>
   </div>
 </div></section>
 
@@ -673,6 +705,10 @@ const ic=(n,c='')=>`<svg class="ico ${c}" viewBox="0 0 24 24" aria-hidden="true"
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const mob=()=>innerWidth<=1050;
+// languages appear in a fresh random order on every load, everywhere on the page
+const LORD=['English','Pidgin','Yorùbá','Hausa','Igbo'];for(let i=LORD.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[LORD[i],LORD[j]]=[LORD[j],LORD[i]];}
+const LS=c=>LORD.slice(0,-1).join(', ')+' '+c+' '+LORD[LORD.length-1];
+$$('[data-langs]').forEach(e=>e.textContent=LS(e.dataset.langs));
 $$('i[data-ic]').forEach(e=>e.outerHTML=ic(e.dataset.ic));
 const onIn=(el,fn,th=.3)=>{if(!el)return;const o=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){o.disconnect();fn(el);}},{threshold:th});o.observe(el);};
 const nf=n=>n.toLocaleString('en-GB');
@@ -779,9 +815,9 @@ const appWA=(mode)=>`<div class="wa" style="display:flex;flex-direction:column;h
  <div class="feed"><div class="chat" id="${mode}chat">
  ${mode==='demo'?`
   <div class="bub me pop" data-t="300"><div class="fw2">${ic('forward')}Forwarded many times</div><div style="border-radius:6px;overflow:hidden;margin-bottom:4px"><div class="fk" style="font-size:17px;padding:14px">Election postponed to March 2027</div></div><div class="tm">9:41 ${ticks}</div></div>
-  <div class="bub me pop" data-t="1200"><div class="vn">${av('T','#6c4bd1')}<span class="pl">${ic('play')}</span>${wave()}</div><div class="trn">“Ṣé òótọ́ ni pé wọ́n ti sún ìdìbò síwájú?”</div><div class="tm">0:04  9:41 ${ticks}</div></div>
+  <div class="bub me pop" data-t="1200"><div class="vn">${av('T','#6c4bd1')}<span class="pl">${ic('play')}</span>${wave()}</div><div class="trn">${VQ[VL[0][0]]}</div><div class="tm">0:04  9:41 ${ticks}</div></div>
   <div class="bub th pop" data-t="2900">${VD.f}<br>This image did not come from INEC. Here's a voice reply.</div>
-  <div class="bub th pop" data-t="3900"><div class="vn">${cf()}<span class="pl">${ic('play')}</span>${wave(30,'vw')}</div><div class="lgn" id="vl">Yorùbá</div><div class="trn" id="vt">“Rárá. Ìdìbò ààrẹ yóò wáyé ní ọjọ́ kẹrìndínlógún, oṣù kìíní, ọdún 2027.”</div>${src('INEC 2027 election timetable')}<div class="tm">0:06  9:41</div></div>`
+  <div class="bub th pop" data-t="3900"><div class="vn">${cf()}<span class="pl">${ic('play')}</span>${wave(30,'vw')}</div><div class="lgn" id="vl">${VL[0][0]}</div><div class="trn" id="vt">${VL[0][1]}</div>${src('INEC 2027 election timetable')}<div class="tm">0:06  9:41</div></div>`
  :`<div class="enc">${ic('lock')}<span>Messages are end-to-end encrypted. Confam answers only from verified sources.</span></div>
   <div class="bub th">Hello, I'm Confam. Ask me about the 2027 elections, or forward a post you're not sure about.<div class="tm">9:41</div></div>`}
  </div></div>
@@ -796,12 +832,14 @@ const VL=[
  ['Igbo','“Mba. A ga-eme ntuli aka onye isi ala n’ụbọchị 16 Jenụwarị, 2027.”'],
  ['Pidgin','“No be true. Presidential election go hold for 16 January 2027.”'],
  ['English','“No. The presidential election holds on 16 January 2027.”']];
+VL.sort((a,b)=>LORD.indexOf(a[0])-LORD.indexOf(b[0]));
+const VQ={'Yorùbá':'“Ṣé òótọ́ ni pé wọ́n ti sún ìdìbò síwájú?”',Hausa:'“Shin gaskiya ne an ɗage zaɓe?”',Igbo:'“Ọ bụ eziokwu na e yigharịrị ntuli aka?”',Pidgin:'“Na true say dem don shift election?”',English:'“Is it true the election has been postponed?”'};
 const SC=[
- {tab:'The problem',ico:'ban',plat:'The problem',h:'A fake notice reaches two million people before lunch.',p:'Nobody in the replies knows where to check it. By the time a correction appears, the post has already been forwarded to thousands of family group chats.',app:()=>appX(true)},
+ {tab:'The problem',ico:'ban',plat:'The problem',h:'Misinformation reaches two million people before lunch.',p:'Nobody in the replies knows where to check it. By the time a correction appears, the post has already been forwarded to thousands of family group chats.',app:()=>appX(true)},
  {tab:'X',ico:'at-x',plat:'On X',h:'Tag @ConfamNG and the correction lands in the same thread.',p:'Confam checks the claim against INEC\'s published timetable and replies publicly, so everyone who saw the lie sees the source.',app:()=>appX(false)},
  {tab:'Instagram',ico:'camera',plat:'On Instagram',h:'When it can\'t confirm something, it says so.',p:'No source means no verdict. Confam flags the post for a human fact-checker, says so in the comments, and follows up once it\'s checked.',app:appIG},
  {tab:'Facebook',ico:'message-circle',plat:'On Facebook',h:'Ask a question, get INEC\'s answer and the date it was published.',p:'Messenger works the same way. Ask who to vote for and Confam politely declines, every time.',app:appFB},
- {tab:'WhatsApp',ico:'phone',plat:'On WhatsApp',h:'Send a voice note, get one back in your language.',p:'Forward a suspicious image or speak your question. Confam replies by voice in Yorùbá, Hausa, Igbo, Pidgin or English.',langs:true,app:()=>appWA('demo')},
+ {tab:'WhatsApp',ico:'phone',plat:'On WhatsApp',h:'Send a voice note, get one back in your language.',p:'Forward a suspicious image or speak your question. Confam replies by voice in '+LS('or')+'. More languages are on the way.',langs:true,app:()=>appWA('demo')},
  {tab:'The rules',ico:'shield-check',plat:'The rules',h:'Tag it. Confam it.',p:'An AI tool for INEC that only shares what can be checked, on the apps Nigerians already use, in the languages they speak.',rules:true}
 ];
 $('#tabs').innerHTML=SC.map((s,i)=>`<button class="tab" data-i="${i}"><span class="tr"><i></i></span>${s.tab}</button>`).join('');
@@ -833,19 +871,26 @@ document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))re
 document.addEventListener('fullscreenchange',()=>setTimeout(()=>render(cur),60));
 
 /* ---------- 09:41:06 language rotator ---------- */
-const LT=[['English','Nationwide',VL[4][1]],['Pidgin','Nationwide',VL[3][1]],['Yorùbá','South-West',VL[0][1]],['Hausa','North',VL[1][1]],['Igbo','South-East',VL[2][1]]];
-$('#ltabs').innerHTML=LT.map((l,i)=>`<button class="lt" role="tab" data-i="${i}">${l[0]}<small>${l[1]}</small></button>`).join('');
+const RG={English:'Nationwide',Pidgin:'Nationwide','Yorùbá':'South-West',Hausa:'North',Igbo:'South-East'};
+const LT=VL.map(v=>[v[0],RG[v[0]],v[1]]);
+$('#ltabs').innerHTML=LT.map((l,i)=>`<button class="lt" role="tab" data-i="${i}">${l[0]}<small>${l[1]}</small></button>`).join('')+'<span class="lt more">More languages<small>coming</small></span>';
 const lts=$$('.lt'),vtx=$('#vtext');$('#vwave').outerHTML=wave(44,'vwave');$('#vwave').classList.add('live');let li=0,ltm=0;
 function showL(i){li=i;lts.forEach((b,k)=>{b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i);});vtx.innerHTML=LT[i][2].split(' ').map((w,k)=>`<span class="w" style="animation-delay:${k*55}ms">${w}</span>`).join(' ');}
 const autoL=()=>{clearInterval(ltm);if(!reduce)ltm=setInterval(()=>showL((li+1)%LT.length),3800);};
 lts.forEach((b,k)=>b.onclick=()=>{showL(k);autoL();});
 showL(0);onIn($('#vbox'),autoL);
 
+/* ---------- 24/7 vault feed ---------- */
+const tks=a=>a.map(x=>`<span class="tk">${ic(x[0])}${x[1]}</span>`).join('');
+$('#trk1').innerHTML=tks([['file-text','INEC press release'],['badge-check','Published fact-check'],['clock','Election timetable'],['file-text','INEC statement'],['badge-check','Fact-check update'],['info','Polling unit notice']]).repeat(2);
+$('#trk2').innerHTML=tks([['at-x','X post'],['phone','WhatsApp forward'],['camera','Instagram reel'],['message-circle','Facebook post'],['video','Short video'],['audio-lines','Voice note'],['image','Screenshot']]).repeat(2);
+onIn($('#vcount'),()=>{const v=$('#vcount');let n=184320;count(v,n,2000);if(reduce)return;setTimeout(()=>setInterval(()=>{n+=7+Math.floor(Math.random()*40);v.textContent=nf(n);},450),2100);},.1);
+
 /* ---------- 18:00 claims radar (illustrative) ---------- */
 const RD=[['Presidential election “moved to March 2027”','f',1840,'X · WhatsApp'],['“PVC collection ends tomorrow”','r',960,'Instagram'],['“Governorship polls on the same day”','f',610,'Facebook'],['Final register out 15 December 2026','t',420,'WhatsApp']];
 const PL={f:'False',t:'Confirmed',r:'Under review'};
 $('#rows').innerHTML=RD.map(r=>`<div class="row"><div class="c">${r[0]}</div><span class="pill ${r[1]}">${PL[r[1]]}</span><div class="meta"><span class="wh">${r[3]}</span><div class="bar"><i class="${r[1]}"></i></div><span class="cnt">0</span></div></div>`).join('');
-const SPL=[['WhatsApp',46],['X',27],['Facebook',17],['Instagram',10]],SLG=[['English',38],['Pidgin',27],['Hausa',15],['Yorùbá',12],['Igbo',8]];
+const SPL=[['WhatsApp',46],['X',27],['Facebook',17],['Instagram',10]],SLG=LORD.map((l,i)=>[l,[38,27,15,12,8][i]]);
 const sbs=a=>a.map(x=>`<div class="sb"><span>${x[0]}</span><div class="bar"><i data-w="${x[1]}"></i></div><em>${x[1]}%</em></div>`).join('');
 $('#sp1').innerHTML=sbs(SPL);$('#sp2').innerHTML=sbs(SLG);
 onIn($('#dash'),()=>{
@@ -873,7 +918,7 @@ const QA=[
  {q:'Who should I vote for?',sq:'Who should I vote for?',k:'Question',i:'scale',v:'',
   a:{English:'I don\'t recommend parties or candidates. I can help you find out how and where to vote.',Pidgin:'I no dey support any party or candidate. But I fit help you know how and where you go vote.'}}
 ];
-const LANGS=['English','Pidgin','Yorùbá','Hausa','Igbo'];let lang='English',busy=false;
+const LANGS=LORD;let lang='English',busy=false;
 $('#tryPhone').innerHTML=iphone(appWA('try'));
 $('#qs').innerHTML=QA.map((x,i)=>`<button class="q" data-i="${i}">${ic(x.i)}<span>${x.q}</span><span class="kind">${x.k}</span></button>`).join('');
 $('#lrow').insertAdjacentHTML('beforeend',LANGS.map(l=>`<button class="chip ${l===lang?'on':''}" data-l="${l}">${l}</button>`).join(''));
